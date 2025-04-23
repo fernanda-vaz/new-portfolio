@@ -1,0 +1,255 @@
+{
+  "categories": [
+    {
+      "icon": "CodeIcon",
+      "name": "Frontend",
+      "skills": [
+        "TypeScript",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "Styled Components",
+        "Sass",
+        "Wordpress"
+      ]
+    },
+
+    {
+      "icon": "BackendIcon",
+      "name": "Backend & Infraestrutura",
+      "skills": ["Node.js", "MongoDB", "Docker", "Vercel"]
+    },
+    {
+      "icon": "DesignIcon",
+      "name": "Ferramentas de Design",
+      "skills": ["Figma", "Photoshop"]
+    },
+    {
+      "icon": "DevOpsIcon",
+      "name": "DevOps",
+      "skills": ["Git", "Github", "Docker", "Vercel", "GitHub Actions"]
+    }
+  ],
+
+  "social_handle": [
+    {
+      "platform": "LinkedIn",
+      "url": "http://www.linkedin.com/in/vaz-fernanda",
+      "icon": "LinkedinIcon"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/fernanda-vaz",
+      "icon": "GithubIcon"
+    },
+    {
+      "platform": "WhatsApp",
+      "url": "https://wa.link/ax1g3o",
+      "icon": "MessageIcon"
+    }
+  ],
+
+  "about": {
+    "name": "Fernanda Vaz",
+    "title": "Desenvolvimento de interfaces modernas, interativas e de alto desempenho.",
+    "subtitle": "Criação de sites, landing pages, otimização de SEO e integração com APIs para criar soluções web de alta qualidade.",
+    "description":  "Atuo como desenvolvedora web criando sites, landing pages, otimizando SEO e integrando APIs REST. Atualmente curso uma pós-graduação em Full Stack Development na FIAP e tenho me dedicado a diversos cursos para aprimorar minhas habilidades. Meu objetivo é me tornar uma desenvolvedora Full Stack, combinando habilidades técnicas e visão criativa para entregar projetos funcionais e inovadores.",
+    "badge": "Desenvolvedora Web Frontend",
+    "avatar": {
+      "url": "/profile.jpg"
+    },
+    "heroImage": {
+      "url": "/web-developer.png"
+    }
+  },
+
+  "services": [
+    {
+      "title": "Desenvolvimento Web",
+      "description": "Sites completos e personalizados, modernos e responsivos para todos os dispositivos."
+    },
+    {
+      "title": "Landing Pages",
+      "description": "Páginas de captura otimizadas para conversão em campanhas e lançamentos."
+    },
+    {
+      "title": "Otimização de SEO",
+      "description": "Implementação de melhores práticas para aumentar a visibilidade do seu site nos motores de busca."
+    },
+    {
+      "title": "Consumo de APIs",
+      "description": "Integração de sistemas externos como mapas e redes sociais no seu site."
+    }
+  ],
+
+  "avatar": {
+    "url": "/placeholder.svg"
+  },
+
+  "heroImage": {
+    "url": "/placeholder.svg"
+  },
+
+  "features": [
+    {
+      "title": "Design Minimalista",
+      "description": "Estética minimalista e organizada com foco em destacar o principal da página: o conteúdo.",
+      "icon": "DesignIcon"
+    },
+    {
+      "title": "Responsividade",
+      "description": "Interface responsiva adaptada para diferentes tamanhos de tela e dispositivos, garantindo usabilidade fluida.",
+      "icon": "SmartphoneIcon"
+    },
+    {
+      "title": "Performance Otimizada",
+      "description": "Tempo de carregamento reduzido para uma navegação rápida e interações suaves.",
+      "icon": "PowerIcon"
+    },
+    {
+      "title": "Acessibilidade",
+      "description": "Práticas de design inclusivo que garantem o acesso e a navegação para todos os perfis de usuários.",
+      "icon": "AccessibilityIcon"
+    },
+    {
+      "title": "Otimização de SEO",
+      "description": "Código otimizado e boas práticas que favorecem o ranqueamento nos mecanismos de busca.",
+      "icon": "SearchIcon"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Converte Agora",
+      "description": "Ferramenta técnica para conversão precisa entre unidades de medida em diferentes sistemas.",
+      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-convert.png",
+      "category": "Desenvolvimento Web",
+      "badge": ["React", "Node.js", "JavaScript", "Styled Components"],
+      "href": "https://converteagora.com.br",
+      "githuburl": "#"
+    },
+    {
+      "title": "Audio Shop",
+      "description": "Projeto pessoal full stack de E-commerce.",
+      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-audio-shop.png",
+      "category": "Mobile App",
+      "badge": ["React", "Node.js", "JavaScript", "CSS"],
+      "href": "https://audio-shop-three.vercel.app",
+      "githuburl": "https://github.com/fernanda-vaz/audio-shop"
+    },
+    {
+      "title": "Link Bio",
+      "description": "Projeto pessoal de uma página de links personalizada, criada para organizar e centralizar os principais conteúdos e redes sociais de um profissional ou marca pessoal.",
+      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-links.png",
+      "category": "Mobile App",
+      "badge": ["Reactjs", "Nodejs", "Sass", "JavaScript"],
+      "href": "https://fernanda-vaz.github.io/links/",
+      "githuburl": "https://github.com/fernanda-vaz/links"
+    },
+    {
+      "title": "Landing Page",
+      "description": "Exemplo de Landing Page.",
+      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-landing-page.png",
+      "category": "Digital Marketing",
+      "badge": ["React", "Node.js", "JavaScript", "Styled Components"],
+      "href": "https://landing-page-amber-eta.vercel.app",
+      "githuburl": "https://github.com/fernanda-vaz/landing-page"
+    },
+    {
+      "title": "Previsão do Tempo",
+      "description": "Sistema de consulta climática em tempo real integrado a APIs de previsão do tempo e imagens dinâmicas.",
+      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-weather.png",
+      "category": "UI/UX",
+      "badge": ["HTML", "CSS", "JavaScript"],
+      "href": "https://github.com/fernanda-vaz/previsao-do-tempo",
+      "githuburl": "https://github.com/fernanda-vaz/previsao-do-tempo"
+    },
+    {
+      "title": "To do List",
+      "description": "Lista de tarfas com funcionalidade de editar e/ou excluir os ítens.",
+      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-to-do-list.png",
+      "category": "Product Design",
+      "badge": ["HTML", "CSS", "JavaScript"],
+      "href": "https://todo-list-two-psi-12.vercel.app",
+      "githuburl": "https://github.com/fernanda-vaz/todo-list"
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "Docker",
+      "enabled": true
+    },
+    {
+      "name": "Figma",
+      "enabled": true
+    },
+    {
+      "name": "TypeScript",
+      "enabled": true
+    },
+    {
+      "name": "Node.js",
+      "enabled": true
+    },
+    {
+      "name": "MongoDB",
+      "enabled": true
+    },
+    {
+      "name": "JavaScript",
+      "enabled": true
+    },
+    {
+      "name": "Git",
+      "enabled": true
+    },
+    {
+      "name": "Github",
+      "enabled": true
+    },
+    {
+      "name": "Sass",
+      "enabled": true
+    },
+    {
+      "name": "Vercel",
+      "enabled": true
+    },
+    {
+      "name": "Next.js",
+      "enabled": true
+    },
+    {
+      "name": "React",
+      "enabled": true
+    },
+    {
+      "name": "Tailwind",
+      "enabled": true
+    },
+    {
+      "name": "Styled Components",
+      "enabled": true
+    },
+    {
+      "name": "CSS",
+      "enabled": true
+    },
+    {
+      "name": "HTML",
+      "enable": true
+    },
+    {
+      "name": "Photoshop",
+      "enabled": true
+    },
+    {
+      "name": "Wordpress",
+      "enabled": true
+    }
+  ]
+}
