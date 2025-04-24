@@ -173,7 +173,7 @@ export const MotionAnimatedText = ({ children }: { children: string }) => {
       {words.map((word, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0.3 }}
+          initial={{ opacity: 0.1 }}
           whileInView={{ opacity: 1 }}
           transition={{
             delay: i * 0.08,

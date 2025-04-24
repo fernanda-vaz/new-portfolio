@@ -88,11 +88,11 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground to-slate-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent-foreground;
 }
 
 .hover-lift {
-  @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg;
+  @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:duration-300;
 }
 
 html {
@@ -100,5 +100,5 @@ html {
 }
 
 .blob {
-  background: conic-gradient(from 2.35rad, #57f2aa, rgb(129 114 228));
+  background: conic-gradient(from 2.35rad, rgb(87, 242, 170, 0.5), rgb(129 114 228));
 }
