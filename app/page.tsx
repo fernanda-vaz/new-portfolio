@@ -10,8 +10,15 @@ import { Portfolio } from '@/lib/interface'
 export default async function Home() {
   const portfolio = (await import('@/infos.json')).default
 
-  const { categories, social_handle, about, services, features, projects, skills } =
-    portfolio as Portfolio
+  const {
+    categories,
+    social_handle,
+    about,
+    services,
+    features,
+    projects,
+    skills,
+  } = portfolio as Portfolio
 
   return (
     <div className='flex min-h-screen flex-col'>
@@ -21,7 +28,7 @@ export default async function Home() {
         <FeatureCarousel features={features} />
         <SkillsSection categories={categories} />
         <ProjectsSection projects={projects} />
-        <Marquee skills={skills}/>
+        <Marquee skills={skills} />
         <ContactSection social={social_handle} />
       </main>
     </div>
