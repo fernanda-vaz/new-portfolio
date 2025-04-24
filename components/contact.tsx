@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import { toast, Bounce, ToastContainer } from 'react-toastify'
 import {
+  MotionAnimatedText,
   SectionHeading,
   SlideIn,
   TextReveal,
@@ -103,13 +104,19 @@ export function ContactSection({ social }: SocialProps) {
                 </SlideIn>
               </SectionHeading>
 
-              <Transition>
+              {/* <Transition>
                 <p className='max-w-[600px] text-muted-foreground md:text-xl/relaxe '>
                   Estou disponível para novos projetos. Entre em contato para
                   discutirmos como posso ajudar a transformar suas ideias em
                   realidade.
                 </p>
-              </Transition>
+              </Transition> */}
+
+              <div className='text-start max-w-[1200px] text-xl/relaxed text-muted-foreground'>
+                <MotionAnimatedText>
+                  Estou disponível para novos projetos. Entre em contato para discutirmos como posso ajudar a transformar suas ideias em realidade.
+                </MotionAnimatedText>
+              </div>
             </div>
             <div className='space-y-4'>
               <div className='flex items-center'>

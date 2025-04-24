@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { About, Service } from '@/lib/interface'
 import {
-  AnimatedText,
+  MotionAnimatedText,
   SectionHeading,
   SlideIn,
   Transition,
@@ -31,8 +31,8 @@ export function AboutSection({ about, services }: AboutProps) {
               </SlideIn>
             </SectionHeading>
 
-            <div className='text-start max-w-[1200px] text-2xl/relaxed md:pl-16'>
-              <AnimatedText>{about.description}</AnimatedText>
+            <div className='text-center max-w-[1200px] text-2xl/relaxed md:pl-16'>
+              <MotionAnimatedText>{about.description}</MotionAnimatedText>
             </div>
           </div>
           <div className='mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12'>

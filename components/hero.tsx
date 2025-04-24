@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from './ui/badge'
 import { motion } from 'motion/react'
 import { About } from '@/lib/interface'
-import { TextReveal, Transition } from './ui/transitions'
+import { MotionAnimatedText, TextReveal, Transition } from './ui/transitions'
 
 interface HeroProps {
   about: About
@@ -22,9 +22,11 @@ export default function HeroSection({ about }: HeroProps) {
         <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12'>
           <div className='flex flex-col justify-center space-y-4'>
             <div className='space-y-2'>
-              <Badge className='inline-flex' variant='outline'>
-                {about.badge}
-              </Badge>
+              <Transition>
+                <Badge className='inline-flex' variant='outline'>
+                  {about.badge}
+                </Badge>
+              </Transition>
               <motion.h1
                 className='mt-10 text-4xl font-bold tracking-tight text-primary sm:text-6xl'
                 initial={{ opacity: 0, y: 20 }}
@@ -33,14 +35,25 @@ export default function HeroSection({ about }: HeroProps) {
               >
                 <span className='text-gradient'>{about.title}</span>
               </motion.h1>
-              <motion.p
-                className='mmt-6 text-lg leading-8 text-muted-foreground'
+              {/* <motion.p
+                className='mt-6 text-lg leading-8 text-muted-foreground'
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 {about.subtitle}
-              </motion.p>
+              </motion.p> */}
+              <motion.div  
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className='text-start max-w-[1200px] mt-6 text-lg leading-8 text-muted-foreground' 
+              >
+                <MotionAnimatedText>
+                  {about.subtitle}
+                </MotionAnimatedText>
+              </motion.div>
+
             </div>
             <motion.div
               className='flex flex-col gap-2 min-[400px]:flex-row'
@@ -59,7 +72,6 @@ export default function HeroSection({ about }: HeroProps) {
                   <TextReveal>Ver Projetos</TextReveal>
                 </Link>
               </Button>
-             
             </motion.div>
           </div>
           <motion.div
@@ -74,7 +86,7 @@ export default function HeroSection({ about }: HeroProps) {
                 width={1000}
                 height={1000}
                 alt='Imagem de perfil'
-                className='rounded-2xl shadow-xl ring-1 ring-gray-900/10'
+                
               />
             </div>
           </motion.div>

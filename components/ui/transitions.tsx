@@ -127,32 +127,64 @@ export const SlideIn = ({
   )
 }
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
-export const AnimatedText = ({ children }: { children: string }) => {
+// export const AnimatedText = ({ children }: { children: string }) => {
+//   useEffect(() => {
+//     const elements = document.querySelectorAll('.animated-text')
+
+//     elements.forEach((element) => {
+//       const split = new SplitType(element as HTMLElement, {
+//         types: 'words,chars',
+//       })
+
+//       gsap.from(split.chars, {
+//         scrollTrigger: {
+//           trigger: element,
+//           start: 'top 90%',
+//           end: 'top 20%',
+//           scrub: true,
+//           markers: false,
+//         },
+//         opacity: 0.3,
+//         stagger: 0.02,
+//       })
+//     })
+//   }, [])
+
+//   return (
+//     <div>
+//       <span className='animated-text text-muted-foreground md:text-xl/relaxed'>
+//         {children}
+//       </span>
+//     </div>
+//   )
+// }
+
+export const MotionAnimatedText = ({ children }: { children: string }) => {
+  const [words, setWords] = useState<string[]>([])
+
   useEffect(() => {
-    const elements = document.querySelectorAll('.animated-text')
-
-    elements.forEach((element) => {
-      const split = new SplitType(element as HTMLElement, { types: 'words,chars' })
-
-      gsap.from(split.chars, {
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 90%',
-          end: 'top 20%',
-          scrub: 2,
-          markers: true,
-        },
-        opacity: 0.3,
-        stagger: 0.02,
-      })
-    })
-  }, [])
+    setWords(children.split(' '))
+  }, [children])
 
   return (
-    <div >
-      <span className='animated-text text-muted-foreground md:text-xl/relaxed'>{children}</span>
+    <div className='overflow-hidden'>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0.3 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            delay: i * 0.08,
+            duration: 0.5,
+            ease: 'easeOut',
+          }}
+          className='inline-block mr-2'
+        >
+          {word}
+        </motion.span>
+      ))}
     </div>
   )
 }

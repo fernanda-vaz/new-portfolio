@@ -3,7 +3,13 @@
 import { motion } from 'motion/react'
 import { ProjectCard } from './ui/project-card'
 import { Project } from '@/lib/interface'
-import { SectionHeading, SlideIn, TextReveal, Transition } from './ui/transitions'
+import {
+  MotionAnimatedText,
+  SectionHeading,
+  SlideIn,
+  TextReveal,
+  Transition,
+} from './ui/transitions'
 import { useState } from 'react'
 import { Button } from './ui/button'
 
@@ -39,33 +45,41 @@ export function ProjectsSection({ projects }: ProjectProps) {
             </SlideIn>
           </SectionHeading>
 
-          <Transition className='text-start w-full md:pl-16'>
+          {/* <Transition className='text-start w-full md:pl-16'>
             <p className='max-w-[900px] text-muted-foreground md:text-xl/relaxed mb-4'>
               Confira alguns dos meus trabalhos mais recentes.
             </p>
-          </Transition>
+          </Transition> */}
+
+          <div className='text-center max-w-[1200px] text-2xl/relaxed text-muted-foreground md:pl-16 pb-12'>
+            <MotionAnimatedText>
+              Confira alguns dos meus trabalhos mais recentes.
+            </MotionAnimatedText>
+          </div>
         </motion.div>
 
         <motion.div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {projects.slice(0, showMore ? projects.length : numProjectToShow).map((proj, i) => (
-            <Transition
-            transition={{ delay: 0.2 + i * 0.1}}
-            viewport={{ once: true }}
-            key={i}
-            layoutId={proj.title}
-            >
-              <ProjectCard 
-                title={proj.title}
-                description={proj.description}
-                badge={proj.badge}
-                category={proj.category}
-                imageUrl={proj.imageUrl}
-                href={proj.href}
-                githuburl={proj.githuburl}
-              />
-            </Transition>
-          ))}
-          
+          {projects
+            .slice(0, showMore ? projects.length : numProjectToShow)
+            .map((proj, i) => (
+              <Transition
+                transition={{ delay: 0.2 + i * 0.1 }}
+                viewport={{ once: true }}
+                key={i}
+                layoutId={proj.title}
+              >
+                <ProjectCard
+                  title={proj.title}
+                  description={proj.description}
+                  badge={proj.badge}
+                  category={proj.category}
+                  imageUrl={proj.imageUrl}
+                  href={proj.href}
+                  githuburl={proj.githuburl}
+                />
+              </Transition>
+            ))}
+
           {/* {projects.map((item, i) => (
             <SlideIn key={i}>
               <ProjectCard
@@ -87,7 +101,7 @@ export function ProjectsSection({ projects }: ProjectProps) {
             variant='outline'
             size='lg'
             onClick={() => setShowMore(!showMore)}
-        >
+          >
             <TextReveal>{showMore ? 'Ver menos' : 'Ver mais'}</TextReveal>
           </Button>
         )}
