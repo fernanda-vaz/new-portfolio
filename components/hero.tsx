@@ -68,8 +68,8 @@ export default function HeroSection({ about }: HeroProps) {
               </Button>
 
               <Button asChild size='lg' disabled={false} variant='outline'>
-                <Link href='#projects'>
-                  <TextReveal>Ver Projetos</TextReveal>
+                <Link href='#contact'>
+                  <TextReveal>Entre em Contato</TextReveal>
                 </Link>
               </Button>
             </motion.div>
