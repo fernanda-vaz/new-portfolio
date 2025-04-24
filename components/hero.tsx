@@ -61,13 +61,13 @@ export default function HeroSection({ about }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Button asChild size='lg' disabled={false}>
+              <Button asChild size='lg' disabled={false} className='z-50'>
                 <Link href='#projects'>
                   <TextReveal>Ver Projetos</TextReveal>
                 </Link>
               </Button>
 
-              <Button asChild size='lg' disabled={false} variant='outline'>
+              <Button asChild size='lg' disabled={false} variant='outline' className='z-50'>
                 <Link href='#contact'>
                   <TextReveal>Entre em Contato</TextReveal>
                 </Link>
