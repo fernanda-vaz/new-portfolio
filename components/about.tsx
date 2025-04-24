@@ -1,6 +1,13 @@
+'use client'
+
 import Image from 'next/image'
 import { About, Service } from '@/lib/interface'
-import { SectionHeading, SlideIn, Transition } from './ui/transitions'
+import {
+  AnimatedText,
+  SectionHeading,
+  SlideIn,
+  Transition,
+} from './ui/transitions'
 
 interface AboutProps {
   about: About
@@ -23,12 +30,10 @@ export function AboutSection({ about, services }: AboutProps) {
                 mim<span className='text-primary'>.</span>
               </SlideIn>
             </SectionHeading>
-            <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'></h2>
-            <Transition className='text-start w-full md:pl-16'>
-              <p className='max-w-[900px] text-muted-foreground md:text-xl/relaxed'>
-                {about.description}
-              </p>
-            </Transition>
+
+            <div className='text-start max-w-[1200px] text-2xl/relaxed md:pl-16'>
+              <AnimatedText>{about.description}</AnimatedText>
+            </div>
           </div>
           <div className='mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12'>
             <Transition>

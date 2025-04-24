@@ -3,13 +3,19 @@
 import { motion } from 'motion/react'
 import { ProjectCard } from './ui/project-card'
 import { Project } from '@/lib/interface'
-import { SectionHeading, SlideIn, Transition } from './ui/transitions'
+import { SectionHeading, SlideIn, TextReveal, Transition } from './ui/transitions'
+import { useState } from 'react'
+import { Button } from './ui/button'
 
 interface ProjectProps {
   projects: Project[]
 }
 
 export function ProjectsSection({ projects }: ProjectProps) {
+  const [showMore, setShowMore] = useState(false)
+
+  const numProjectToShow = 3
+
   return (
     <section
       id='projects'
@@ -41,7 +47,26 @@ export function ProjectsSection({ projects }: ProjectProps) {
         </motion.div>
 
         <motion.div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {projects.map((item, i) => (
+          {projects.slice(0, showMore ? projects.length : numProjectToShow).map((proj, i) => (
+            <Transition
+            transition={{ delay: 0.2 + i * 0.1}}
+            viewport={{ once: true }}
+            key={i}
+            layoutId={proj.title}
+            >
+              <ProjectCard 
+                title={proj.title}
+                description={proj.description}
+                badge={proj.badge}
+                category={proj.category}
+                imageUrl={proj.imageUrl}
+                href={proj.href}
+                githuburl={proj.githuburl}
+              />
+            </Transition>
+          ))}
+          
+          {/* {projects.map((item, i) => (
             <SlideIn key={i}>
               <ProjectCard
                 title={item.title}
@@ -53,8 +78,19 @@ export function ProjectsSection({ projects }: ProjectProps) {
                 githuburl={item.githuburl}
               />
             </SlideIn>
-          ))}
+          ))} */}
         </motion.div>
+      </div>
+      <div className='grid place-items-center py-8'>
+        {projects.length > numProjectToShow && (
+          <Button
+            variant='outline'
+            size='lg'
+            onClick={() => setShowMore(!showMore)}
+        >
+            <TextReveal>{showMore ? 'Ver menos' : 'Ver mais'}</TextReveal>
+          </Button>
+        )}
       </div>
     </section>
   )

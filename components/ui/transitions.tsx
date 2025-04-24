@@ -1,13 +1,11 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { HTMLAttributes, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HTMLMotionProps, motion } from 'motion/react'
-import { useGSAP } from '@gsap/react'
+import SplitType from 'split-type'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 interface SectionHeadingProps extends HTMLMotionProps<'h3'> {}
 
@@ -129,53 +127,32 @@ export const SlideIn = ({
   )
 }
 
-export const OpacityTextReveal = (props: HTMLAttributes<HTMLSpanElement>) => {
-  const textRef = useRef(null)
+gsap.registerPlugin(ScrollTrigger)
 
-  useGSAP(
-    () => {
-      gsap.to(textRef.current, {
-        backgroundPositionX: 0,
-        ease: 'none',
+export const AnimatedText = ({ children }: { children: string }) => {
+  useEffect(() => {
+    const elements = document.querySelectorAll('.animated-text')
+
+    elements.forEach((element) => {
+      const split = new SplitType(element as HTMLElement, { types: 'words,chars' })
+
+      gsap.from(split.chars, {
         scrollTrigger: {
-          trigger: textRef.current,
-          scrub: 1,
-          start: 'top bottom',
-          end: 'bottom center',
+          trigger: element,
+          start: 'top 90%',
+          end: 'top 20%',
+          scrub: 2,
+          markers: true,
         },
+        opacity: 0.3,
+        stagger: 0.02,
       })
-    },
-    { revertOnUpdate: true }
-  )
+    })
+  }, [])
 
   return (
-    <span
-      {...props}
-      ref={textRef}
-      className={cn('text-reveal', props.className)}
-    />
-  )
-}
-
-export const OpacityTransition = ({ children }: { children: string }) => {
-  return (
-    <div className='overflow-hidden '>
-      {children.split('').map((char, i) => (
-        <motion.span
-          initial={{ opacity: 0.1 }}
-          animate={{ opacity: 1 }}
-          layout
-          transition={{ delay: i * 0.03, ease: [0.215, 0.61, 0.355, 1] }}
-          exit={{
-            y: 0,
-            transition: { delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] },
-          }}
-          key={i}
-          className='inline-block'
-        >
-          {char}
-        </motion.span>
-      ))}
+    <div >
+      <span className='animated-text text-muted-foreground md:text-xl/relaxed'>{children}</span>
     </div>
   )
 }

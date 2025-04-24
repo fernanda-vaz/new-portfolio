@@ -31,7 +31,7 @@ export function ProjectCard({
       <motion.div className=''>
         <AnimatePresence>
           <motion.div
-            className='bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10'
+            className='bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/50 h-[450px]'
             layout
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

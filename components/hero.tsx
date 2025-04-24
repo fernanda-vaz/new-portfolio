@@ -14,7 +14,7 @@ interface HeroProps {
 
 export default function HeroSection({ about }: HeroProps) {
   return (
-    <section className='relative isolate overflow-hidden w-full py-12 md:py-24 lg:py-32 xl:py-48'>
+    <section className='relative isolate overflow-hidden w-full py-12 md:py-24 lg:py-32 xl:py-48 min-h-dvh'>
       <Transition>
         <span className='blob size-1/2 absolute top-20 left-20 blur-[100px] -z-10 opacity-50' />
       </Transition>
@@ -48,16 +48,18 @@ export default function HeroSection({ about }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Button asChild size='lg'>
+              <Button asChild size='lg' disabled={false}>
                 <Link href='#projects'>
                   <TextReveal>Ver Projetos</TextReveal>
                 </Link>
               </Button>
-              <Button asChild variant='outline' size='lg'>
-                <Link href='#contact'>
-                  <TextReveal>Entre em Contato</TextReveal>
+
+              <Button asChild size='lg' disabled={false} variant='outline'>
+                <Link href='#projects'>
+                  <TextReveal>Ver Projetos</TextReveal>
                 </Link>
               </Button>
+             
             </motion.div>
           </div>
           <motion.div
@@ -69,8 +71,8 @@ export default function HeroSection({ about }: HeroProps) {
             <div className='relative'>
               <Image
                 src={about.heroImage.url}
-                width={700}
-                height={700}
+                width={1000}
+                height={1000}
                 alt='Imagem de perfil'
                 className='rounded-2xl shadow-xl ring-1 ring-gray-900/10'
               />

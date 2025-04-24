@@ -62,7 +62,7 @@
       "url": "/profile.jpg"
     },
     "heroImage": {
-      "url": "/web-developer.png"
+      "url": "/web-developer.svg"
     }
   },
 
@@ -136,7 +136,7 @@
       "description": "Projeto pessoal full stack de E-commerce.",
       "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-audio-shop.png",
       "category": "Mobile App",
-      "badge": ["React", "Node.js", "JavaScript", "CSS"],
+      "badge": ["React", "CSS", "Node.js", "JavaScript", "MongoDB"],
       "href": "https://audio-shop-three.vercel.app",
       "githuburl": "https://github.com/fernanda-vaz/audio-shop"
     },
