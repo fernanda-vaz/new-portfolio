@@ -19,9 +19,18 @@ interface HeroProps {
 
 export default function HeroSection({ about }: HeroProps) {
   return (
-    <section className='relative isolate overflow-hidden w-full py-12 md:py-24 lg:py-32 xl:py-48'>
+    <section
+      className='relative isolate overflow-hidden w-full py-12 md:py-24 lg:py-32 xl:py-48'
+      style={{ zIndex: 0 }}
+    >
       <Transition>
-        <span className='blob size-1/2 absolute top-20 left-20 blur-[100px] -z-10 opacity-50' />
+        <span
+          className='blob size-1/2 absolute top-20 left-20 blur-[100px] -z-10 opacity-50'
+          style={{
+            zIndex: -1,
+            isolation: 'isolate',
+          }}
+        />
       </Transition>
       <div className='container px-4 md:px-6'>
         <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-20'>
@@ -61,25 +70,26 @@ export default function HeroSection({ about }: HeroProps) {
               </motion.div>
             </div>
 
-            <SlideIn>
+            <SlideIn className='relative z-10'>
+              <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start justify-center'>
+                <Link
+                  href='#projects'
+                  className='w-fit px-10 h-14 shrink-0 bg-secondary shadow-md rounded-xl flex justify-center items-center cursor-pointer text-secondary-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
+                >
+                  <span className='relative overflow-hidden inline-block'>
+                    <TextReveal>Ver Projetos</TextReveal>
+                  </span>
+                </Link>
 
-              <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start md:mx-auto justify-center relative z-10'>
-                
-              <Link
-                href='#projects'
-                className='w-fit px-10 h-14 shrink-0 bg-secondary shadow-md rounded-xl flex justify-center items-center cursor-pointer text-secondary-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
-              >
-                <TextReveal>Ver Projetos</TextReveal>
-              </Link>
-
-              <Link
-                href='#contact'
-                className='w-fit px-10 h-14 shrink-0 shadow-md rounded-xl flex justify-center items-center cursor-pointer border border-input bg-transparent hover:bg-background hover:text-accent-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
-              >
-                <TextReveal>Vamos conversar</TextReveal>
-              </Link>
+                <Link
+                  href='#contact'
+                  className='w-fit px-10 h-14 shrink-0 shadow-md rounded-xl flex justify-center items-center cursor-pointer border border-input bg-transparent hover:bg-background hover:text-accent-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
+                >
+                  <span className='relative overflow-hidden inline-block'>
+                    <TextReveal>Vamos conversar</TextReveal>
+                  </span>
+                </Link>
               </div>
-              
             </SlideIn>
           </div>
           <motion.div

@@ -101,4 +101,6 @@ html {
 
 .blob {
   background: conic-gradient(from 2.35rad, rgb(87, 242, 170, 0.5), rgb(129 114 228));
+  z-index: -1 !important;
+  pointer-events: none !important;
 }

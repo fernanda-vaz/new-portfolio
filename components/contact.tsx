@@ -87,9 +87,8 @@ export function ContactSection({ social }: SocialProps) {
 
   return (
     <section id='contact' className='w-full py-12 md:py-24 lg:py-32 relative'>
-  
-        <span className='blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-[100px] rotate-180 -z-10 opacity-50' />
-  
+      <span className='blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-[100px] rotate-180 -z-10 opacity-50' />
+
       <div className='container px-4 md:px-6'>
         <div className='grid gap-6 lg:grid-cols-2 lg:gap-12'>
           <div className='flex-col justify-center space-y-4'>
@@ -114,7 +113,9 @@ export function ContactSection({ social }: SocialProps) {
 
               <div className='text-start max-w-[1200px] text-xl/relaxed text-muted-foreground'>
                 <MotionAnimatedText>
-                  Estou disponível para novos projetos. Entre em contato para discutirmos como posso ajudar a transformar suas ideias em realidade.
+                  Estou disponível para novos projetos. Entre em contato para
+                  discutirmos como posso ajudar a transformar suas ideias em
+                  realidade.
                 </MotionAnimatedText>
               </div>
             </div>
@@ -122,7 +123,9 @@ export function ContactSection({ social }: SocialProps) {
               <div className='flex items-center'>
                 <SlideIn className='flex items-center'>
                   <MailIcon className='h-5 w-5 mr-2 text-primary' />
-                  <span>fernandavazdev@gmail.com</span>
+                  <span>
+                    fernandavazdev@gmail.com
+                  </span>
                 </SlideIn>
               </div>
               <div className='flex space-x-4'>

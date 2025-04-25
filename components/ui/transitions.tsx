@@ -32,13 +32,14 @@ interface TextRevealProps {
 export const TextReveal = ({ children, className }: TextRevealProps) => {
   const [hover, setHover] = useState(false)
 
-
   return (
     <motion.div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={cn('relative overflow-hidden whitespace-pre', className)}
-      style={{ pointerEvents: 'auto' }}
+      onTouchStart={() => setHover(true)} // 
+      onTouchEnd={() => setHover(false)} // 
+      className={cn('relative overflow-hidden inline-block', className)}
+      style={{ display: 'inline-block' }}
     >
       <div className='overflow-hidden pointer-events-none'>
         {children.split('').map((char, i) => (
