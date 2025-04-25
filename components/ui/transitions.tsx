@@ -32,6 +32,7 @@ interface TextRevealProps {
 export const TextReveal = ({ children, className }: TextRevealProps) => {
   const [hover, setHover] = useState(false)
 
+
   return (
     <motion.div
       onMouseEnter={() => setHover(true)}
