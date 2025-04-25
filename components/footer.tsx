@@ -1,15 +1,22 @@
-
+'use client'
 
 import Link from 'next/link'
 import { TextReveal, Transition } from './ui/transitions'
+import { useEffect, useState } from 'react'
 
 export function Footer() {
+  const [year, setYear] = useState('')
+
+  useEffect(() => {
+    setYear(new Date().getFullYear().toString())
+  }, [])
+
   return (
     <footer className='w-full border-t py-6 md:py-0'>
       <div className='container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row'>
         <Transition>
           <div className='text-center md:text-left'>
-            &copy; {new Date().getFullYear()} | Todos os direitos reservados.
+            &copy; {year} | Todos os direitos reservados.
           </div>
         </Transition>
         <nav className='flex gap-4 sm:gap-6'>

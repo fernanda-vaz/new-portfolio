@@ -61,8 +61,13 @@ export default function HeroSection({ about }: HeroProps) {
               </motion.div>
             </div>
             <SlideIn>
-              <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start md:mx-auto justify-center' >
-                <Button asChild size='lg' disabled={false} className='z-50'>
+              <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start md:mx-auto justify-center relative z-10'>
+                <Button
+                  asChild
+                  size='lg'
+                  disabled={false}
+                 variant='secondary'
+                >
                   <Link href='#projects'>
                     <TextReveal>Ver Projetos</TextReveal>
                   </Link>
@@ -73,7 +78,7 @@ export default function HeroSection({ about }: HeroProps) {
                   size='lg'
                   disabled={false}
                   variant='outline'
-                  className='z-50'
+            
                 >
                   <Link href='#contact'>
                     <TextReveal>Entre em Contato</TextReveal>
