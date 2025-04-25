@@ -38,7 +38,7 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
       onMouseLeave={() => setHover(false)}
       onTouchStart={() => setHover(true)} // 
       onTouchEnd={() => setHover(false)} // 
-      className={cn('relative overflow-hidden inline-block', className)}
+      className={cn('relative overflow-hidden inline-block whitespace-pre', className)}
       style={{ display: 'inline-block' }}
     >
       <div className='overflow-hidden pointer-events-none'>

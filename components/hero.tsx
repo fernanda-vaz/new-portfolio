@@ -35,7 +35,7 @@ export default function HeroSection({ about }: HeroProps) {
       <div className='container px-4 md:px-6'>
         <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-20'>
           <div className='flex flex-col justify-center space-y-4 gap-12'>
-            <div className='space-y-2 flex flex-col md:text-start text-center'>
+            <div className='space-y-2 flex flex-col lg:text-start text-center'>
               <Transition>
                 <Badge
                   className='inline-flex text-lg font-normal'
@@ -64,17 +64,17 @@ export default function HeroSection({ about }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className='md:text-start text-center max-w-[600px] mt-6 text-xl/relaxed leading-8 text-muted-foreground'
+                className='lg:text-start text-center max-w-screen mt-6 text-xl/relaxed leading-8 text-muted-foreground'
               >
                 <MotionAnimatedText>{about.title}</MotionAnimatedText>
               </motion.div>
             </div>
 
             <SlideIn className='relative z-10'>
-              <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start justify-center'>
+              <div className='flex flex-col gap-8 min-[480px]:flex-row items-center lg:justify-start justify-center'>
                 <Link
                   href='#projects'
-                  className='w-fit px-10 h-14 shrink-0 bg-secondary shadow-md rounded-xl flex justify-center items-center cursor-pointer text-secondary-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
+                  className='w-fit px-8 h-14 shrink-0 bg-secondary shadow-md rounded-xl flex justify-center items-center cursor-pointer text-secondary-foreground hover:bg-primary/70 hover:text-foreground transition-colors duration-300 font-medium gap-2'
                 >
                   <span className='relative overflow-hidden inline-block'>
                     <TextReveal>Ver Projetos</TextReveal>
@@ -83,7 +83,7 @@ export default function HeroSection({ about }: HeroProps) {
 
                 <Link
                   href='#contact'
-                  className='w-fit px-10 h-14 shrink-0 shadow-md rounded-xl flex justify-center items-center cursor-pointer border border-input bg-transparent hover:bg-background hover:text-accent-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
+                  className='w-fit px-8 h-14 shrink-0 shadow-md rounded-xl flex justify-center items-center cursor-pointer border border-input bg-transparent hover:bg-background hover:text-accent-foreground hover:opacity-95 transition-colors duration-300 font-medium gap-2'
                 >
                   <span className='relative overflow-hidden inline-block'>
                     <TextReveal>Vamos conversar</TextReveal>
