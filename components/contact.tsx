@@ -143,10 +143,10 @@ export function ContactSection({ social }: SocialProps) {
               </div>
             </div>
           </div>
-          <div className='space-y-4'>
+          <div className='space-y-4 mt-8'>
             <Transition>
               <h2 className='max-w-[600px] text-muted-foreground md:text-xl/relaxe '>
-                Entre em contato!
+                Vamos conversar!
               </h2>
             </Transition>
             <SlideIn className='space-y-4 w-full'>

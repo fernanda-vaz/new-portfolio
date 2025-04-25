@@ -6,7 +6,12 @@ import { Button } from '@/components/ui/button'
 import { Badge } from './ui/badge'
 import { motion } from 'motion/react'
 import { About } from '@/lib/interface'
-import { MotionAnimatedText, TextReveal, Transition } from './ui/transitions'
+import {
+  MotionAnimatedText,
+  SlideIn,
+  TextReveal,
+  Transition,
+} from './ui/transitions'
 
 interface HeroProps {
   about: About
@@ -14,17 +19,20 @@ interface HeroProps {
 
 export default function HeroSection({ about }: HeroProps) {
   return (
-    <section className='relative isolate overflow-hidden w-full py-12 md:py-24 lg:py-32 xl:py-48 min-h-dvh'>
+    <section className='relative isolate overflow-hidden w-full py-12 md:py-24 lg:py-32 xl:py-48'>
       <Transition>
         <span className='blob size-1/2 absolute top-20 left-20 blur-[100px] -z-10 opacity-50' />
       </Transition>
       <div className='container px-4 md:px-6'>
         <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-20'>
           <div className='flex flex-col justify-center space-y-4 gap-12'>
-            <div className='space-y-2 flex flex-col '>
+            <div className='space-y-2 flex flex-col md:text-start text-center'>
               <Transition>
-                <Badge className='inline-flex text-lg font-normal' variant='outline'>
-                  Olá, sou {about.name} 
+                <Badge
+                  className='inline-flex text-lg font-normal'
+                  variant='outline'
+                >
+                  Olá, sou {about.name}
                 </Badge>
               </Transition>
               <motion.h1
@@ -43,36 +51,36 @@ export default function HeroSection({ about }: HeroProps) {
               >
                 {about.subtitle}
               </motion.p> */}
-              <motion.div  
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className='text-start max-w-[600px] mt-6 text-xl/relaxed leading-8 text-muted-foreground' 
+                className='md:text-start text-center max-w-[600px] mt-6 text-xl/relaxed leading-8 text-muted-foreground'
               >
-                <MotionAnimatedText>
-                  {about.title}
-                </MotionAnimatedText>
+                <MotionAnimatedText>{about.title}</MotionAnimatedText>
               </motion.div>
-
             </div>
-            <motion.div
-              className='flex flex-col gap-2 min-[400px]:flex-row'
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Button asChild size='lg' disabled={false} className='z-50'>
-                <Link href='#projects'>
-                  <TextReveal>Ver Projetos</TextReveal>
-                </Link>
-              </Button>
+            <SlideIn>
+              <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start md:mx-auto justify-center' >
+                <Button asChild size='lg' disabled={false} className='z-50'>
+                  <Link href='#projects'>
+                    <TextReveal>Ver Projetos</TextReveal>
+                  </Link>
+                </Button>
 
-              <Button asChild size='lg' disabled={false} variant='outline' className='z-50'>
-                <Link href='#contact'>
-                  <TextReveal>Entre em Contato</TextReveal>
-                </Link>
-              </Button>
-            </motion.div>
+                <Button
+                  asChild
+                  size='lg'
+                  disabled={false}
+                  variant='outline'
+                  className='z-50'
+                >
+                  <Link href='#contact'>
+                    <TextReveal>Entre em Contato</TextReveal>
+                  </Link>
+                </Button>
+              </div>
+            </SlideIn>
           </div>
           <motion.div
             className='mx-auto mt-16 lg:mt-0'
@@ -86,7 +94,6 @@ export default function HeroSection({ about }: HeroProps) {
                 width={800}
                 height={450}
                 alt='Imagem de perfil'
-                
               />
             </div>
           </motion.div>

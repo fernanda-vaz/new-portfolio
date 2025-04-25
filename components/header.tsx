@@ -8,7 +8,6 @@ import { useTheme } from 'next-themes'
 import { Drawer } from '@mui/material'
 import { MenuIcon, MoonIcon, SunIcon } from './ui/icons'
 import Image from 'next/image'
-import Logo from '@/app/favicon.ico'
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -34,7 +33,12 @@ export function Header() {
     >
       <nav className='container flex max-w-7xl h-16 gap-2 items-center justify-between p-6 lg:px-8'>
         <Link href='/'>
-          <Image src={Logo} alt='Logo Fernanda Vaz' width={24} height={24} />
+          <Image
+            src='/favicon.ico'
+            alt='Logo Fernanda Vaz'
+            width={24}
+            height={24}
+          />
         </Link>
         <div className='flex lg:flex-1'>
           <Link href='/' className='font-semibold text-xl'>
