@@ -74,6 +74,16 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      boxShadow: {
+        glass: [
+          '0px 13px 27px -5px rgba(50, 50, 93, 0.25)',
+          '0px 8px 16px -8px rgba(0, 0, 0, 0.3)',
+        ],
+      },
+      backgroundImage: {
+        'glass-gradient':
+          'linear-gradient(113deg, rgba(255, 255, 255, 0.51) 3.51%, rgba(255, 255, 255, 0) 111.71%)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
