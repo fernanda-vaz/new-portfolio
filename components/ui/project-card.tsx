@@ -38,14 +38,23 @@ export function ProjectCard({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className='relative h-64 overflow-hidden'>
+            <div className='relative h-64 overflow-hidden group'>
               <Image
                 src={imageUrl}
                 alt={title}
                 layout='fill'
                 objectFit='cover'
-                className='transition-transform duration-300 ease-in-out group-hover:scale-105'
+                className='transition-transform duration-300 ease-in-out group-hover:scale-105 z-0'
               />
+              <motion.div
+                className='absolute inset-0 bg-black/75 flex items-center justify-center z-10'
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <p className='text-white text-center px-4'>{description}</p>
+              </motion.div>
+              //
               <motion.div
                 className='absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300'
                 whileHover={{ opacity: 1 }}
