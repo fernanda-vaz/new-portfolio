@@ -62,28 +62,14 @@ export default function HeroSection({ about }: HeroProps) {
             </div>
             <SlideIn>
               <div className='flex flex-col gap-8 min-[400px]:flex-row items-center md:justify-start md:mx-auto justify-center relative z-10'>
-                <Button
-                  asChild
-                  size='lg'
-                  disabled={false}
-                 variant='secondary'
-                >
-                  <Link href='#projects'>
-                    <TextReveal>Ver Projetos</TextReveal>
-                  </Link>
-                </Button>
+                <Link href='#projects' className='w-fit shrink-0 shadow-md rounded-md flex justify-center items-center cursor-pointer text-sm/relaxed font-medium transition-colors duration-300 gap-2 bg-secondary text-secondary-foreground hover:bg-primary hover:text-foreground h-11 px-8' >
+                  <TextReveal>Ver Projetos</TextReveal>
+                </Link>
 
-                <Button
-                  asChild
-                  size='lg'
-                  disabled={false}
-                  variant='outline'
-            
-                >
-                  <Link href='#contact'>
-                    <TextReveal>Entre em Contato</TextReveal>
-                  </Link>
-                </Button>
+                <Link href='#contact' className='w-fit shrink-0 shadow-md rounded-md flex justify-center items-center cursor-pointer text-base font-medium transition-colors duration-300 gap-2 border border-input bg-transparent hover:bg-background hover:text-accent-foreground h-11 px-8' >
+                  <TextReveal>Entre em Contato</TextReveal>
+                </Link>
+
               </div>
             </SlideIn>
           </div>
