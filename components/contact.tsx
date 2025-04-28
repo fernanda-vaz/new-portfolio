@@ -87,7 +87,10 @@ export function ContactSection({ social }: SocialProps) {
 
   return (
     <section id='contact' className='w-full py-12 md:py-24 lg:py-32 relative'>
-      <span className='blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-[100px] rotate-180 -z-10 opacity-50' />
+      <span 
+        className='blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-3xl -z-10 opacity-50' 
+        style={{ zIndex: 0 }}
+      />
 
       <div className='container px-4 md:px-6'>
         <div className='grid gap-6 lg:grid-cols-2 lg:gap-12'>

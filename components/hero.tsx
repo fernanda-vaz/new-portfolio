@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
 import { Badge } from './ui/badge'
 import { motion } from 'motion/react'
 import { About } from '@/lib/interface'
@@ -100,10 +99,12 @@ export default function HeroSection({ about }: HeroProps) {
           >
             <div className='relative w-fit'>
               <Image
-                src={about.heroImage.url}
+                src={'/profile-fe.png'}
                 width={800}
                 height={450}
                 alt='Imagem de perfil'
+                className='rounded-full object-cover size-48 md:size-80 border-2 border-secondary mb-8 md:mb-0'
+                priority
               />
             </div>
           </motion.div>
