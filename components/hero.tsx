@@ -6,7 +6,6 @@ import { Badge } from './ui/badge'
 import { motion } from 'motion/react'
 import { About } from '@/lib/interface'
 import {
-  MotionAnimatedText,
   SlideIn,
   TextReveal,
   Transition,
@@ -59,14 +58,6 @@ export default function HeroSection({ about }: HeroProps) {
               >
                 {about.subtitle}
               </motion.p> */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className='lg:text-start text-center max-w-screen mt-6 text-xl/relaxed leading-8 text-muted-foreground'
-              >
-                <MotionAnimatedText>{about.title}</MotionAnimatedText>
-              </motion.div>
             </div>
 
             <SlideIn className='relative z-10'>
@@ -99,7 +90,7 @@ export default function HeroSection({ about }: HeroProps) {
           >
             <div className='relative w-fit'>
               <Image
-                src={'/profile-fe.png'}
+                src='/profile-hero.jpg'
                 width={800}
                 height={450}
                 alt='Imagem de perfil'

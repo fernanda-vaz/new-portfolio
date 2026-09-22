@@ -4,40 +4,57 @@
       "icon": "CodeIcon",
       "name": "Frontend",
       "skills": [
-        "TypeScript",
-        "Javascript",
         "HTML",
         "CSS",
-        "React",
+        "JavaScript",
+        "TypeScript",
+        "React.js",
         "Next.js",
-        "Tailwind",
-        "Styled Components",
+        "Tailwind CSS",
         "Sass",
-        "Wordpress"
+        "Styled Components",
+        "Liferay",
+        "WordPress"
       ]
     },
-
     {
       "icon": "BackendIcon",
-      "name": "Backend & Infraestrutura",
-      "skills": ["Node.js", "MongoDB", "Docker", "Vercel"]
+      "name": "Backend & Dados",
+      "skills": [
+        "Node.js",
+        "APIs REST",
+        "MongoDB",
+        "PostgreSQL"
+      ]
     },
     {
       "icon": "DesignIcon",
-      "name": "Ferramentas de Design",
-      "skills": ["Figma", "Photoshop"]
+      "name": "Design & Qualidade",
+      "skills": [
+        "Figma",
+        "Adobe Photoshop",
+        "Acessibilidade",
+        "SEO"
+      ]
     },
     {
       "icon": "DevOpsIcon",
-      "name": "DevOps",
-      "skills": ["Git", "Github", "Docker", "Vercel", "GitHub Actions"]
+      "name": "DevOps & Colaboração",
+      "skills": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Docker",
+        "GitHub Actions",
+        "CI/CD",
+        "Kanban"
+      ]
     }
   ],
-
   "social_handle": [
     {
       "platform": "LinkedIn",
-      "url": "http://www.linkedin.com/in/vaz-fernanda",
+      "url": "https://www.linkedin.com/in/vaz-fernanda",
       "icon": "LinkedinIcon"
     },
     {
@@ -47,17 +64,16 @@
     },
     {
       "platform": "WhatsApp",
-      "url": "https://wa.link/ax1g3o",
+      "url": "https://wa.me/5561985888005",
       "icon": "MessageIcon"
     }
   ],
-
   "about": {
     "name": "Fernanda Vaz",
-    "title": "Desenvolvimento de interfaces modernas, interativas e de alto desempenho.",
-    "subtitle": "Criação de sites, landing pages, otimização de SEO e integração com APIs para criar soluções web de alta qualidade.",
-    "description":  "Atuo como desenvolvedora web criando sites, landing pages, otimizando SEO e integrando APIs REST. Atualmente curso uma pós-graduação em Full Stack Development na FIAP e tenho me dedicado a diversos cursos para aprimorar minhas habilidades. Meu objetivo é me tornar uma desenvolvedora Full Stack, combinando habilidades técnicas e visão criativa para entregar projetos funcionais e inovadores.",
-    "badge": "Desenvolvedora Web Frontend",
+    "title": "Crio experiências digitais que unem clareza, acessibilidade e performance.",
+    "subtitle": "Desenvolvimento de sistemas web para o setor público, com React, Next.js, TypeScript, Liferay e foco em qualidade, acessibilidade e experiência do usuário.",
+    "description": "Sou desenvolvedora Front-end Júnior na SEA Tecnologia, onde contribuo para a evolução de sistemas web de alta complexidade voltados ao setor público. Trabalho com React, Next.js, JavaScript, TypeScript e Liferay, participando de implementação, revisão de código e entregas contínuas. Sou pós-graduada em Full Stack Development pela FIAP e também tenho experiência com Docker, WordPress e integração de APIs.",
+    "badge": "Desenvolvedora Front-end",
     "avatar": {
       "url": "/profile.jpg"
     },
@@ -65,7 +81,6 @@
       "url": "/web-developer.svg"
     }
   },
-
   "services": [
     {
       "title": "Desenvolvimento Web",
@@ -84,15 +99,12 @@
       "description": "Integração de sistemas externos como mapas e redes sociais no seu site."
     }
   ],
-
   "avatar": {
     "url": "/placeholder.svg"
   },
-
   "heroImage": {
     "url": "/placeholder.svg"
   },
-
   "features": [
     {
       "title": "Design Minimalista",
@@ -120,64 +132,97 @@
       "icon": "SearchIcon"
     }
   ],
-
   "projects": [
     {
-      "title": "Converte Agora",
-      "description": "Ferramenta técnica para conversão precisa entre unidades de medida em diferentes sistemas.",
-      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-convert.png",
-      "category": "Desenvolvimento Web",
-      "badge": ["React", "Node.js", "JavaScript", "Styled Components"],
-      "href": "https://converteagora.com.br",
-      "githuburl": "#"
+      "title": "Team Hub",
+      "description": "Dashboard full stack para gestão de pessoas, com CRUD de colaboradores, filtros, relatórios e indicadores de RH.",
+      "imageUrl": "/projects/team-hub.jpg",
+      "category": "Full Stack",
+      "badge": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Redux",
+        "Tailwind CSS"
+      ],
+      "href": "https://github.com/fernanda-vaz/team-hub",
+      "githuburl": "https://github.com/fernanda-vaz/team-hub"
     },
     {
       "title": "Audio Shop",
-      "description": "Projeto pessoal full stack de E-commerce.",
-      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-audio-shop.png",
-      "category": "Mobile App",
-      "badge": ["React", "CSS", "Node.js", "JavaScript", "MongoDB"],
-      "href": "https://audio-shop-three.vercel.app",
+      "description": "E-commerce full stack com autenticação, catálogo, carrinho e pedidos, integrado a uma API REST e banco MongoDB.",
+      "imageUrl": "/projects/audio-shop.png",
+      "category": "E-commerce",
+      "badge": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "JWT",
+        "Docker",
+        "Material UI"
+      ],
+      "href": "https://audio-shop-lac.vercel.app",
       "githuburl": "https://github.com/fernanda-vaz/audio-shop"
     },
     {
-      "title": "Link Bio",
-      "description": "Projeto pessoal de uma página de links personalizada, criada para organizar e centralizar os principais conteúdos e redes sociais de um profissional ou marca pessoal.",
-      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-links.png",
+      "title": "Fokus",
+      "description": "Aplicativo mobile de produtividade com timer Pomodoro e gerenciamento de tarefas persistidas localmente.",
+      "imageUrl": "/projects/fokus.png",
       "category": "Mobile App",
-      "badge": ["Reactjs", "Nodejs", "Sass", "JavaScript"],
-      "href": "https://fernanda-vaz.github.io/links/",
-      "githuburl": "https://github.com/fernanda-vaz/links"
+      "badge": [
+        "React Native",
+        "Expo",
+        "React Navigation",
+        "AsyncStorage",
+        "Reanimated"
+      ],
+      "href": "https://github.com/fernanda-vaz/react-native-fokus",
+      "githuburl": "https://github.com/fernanda-vaz/react-native-fokus"
     },
     {
-      "title": "Landing Page",
-      "description": "Exemplo de Landing Page.",
-      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-landing-page.png",
-      "category": "Digital Marketing",
-      "badge": ["React", "Node.js", "JavaScript", "Styled Components"],
-      "href": "https://landing-page-amber-eta.vercel.app",
-      "githuburl": "https://github.com/fernanda-vaz/landing-page"
+      "title": "Code Connect",
+      "description": "Aplicação em Next.js para publicação e gerenciamento de posts, com Server Actions, Prisma, PostgreSQL e Docker.",
+      "imageUrl": "/projects/code-connect.svg",
+      "category": "Full Stack",
+      "badge": [
+        "Next.js",
+        "Prisma",
+        "PostgreSQL",
+        "Docker",
+        "Server Actions"
+      ],
+      "href": "https://alura-code-connect-ochre.vercel.app",
+      "githuburl": "https://github.com/fernanda-vaz/alura-code-connect"
     },
     {
-      "title": "Previsão do Tempo",
-      "description": "Sistema de consulta climática em tempo real integrado a APIs de previsão do tempo e imagens dinâmicas.",
-      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-weather.png",
-      "category": "UI/UX",
-      "badge": ["HTML", "CSS", "JavaScript"],
-      "href": "https://github.com/fernanda-vaz/previsao-do-tempo",
-      "githuburl": "https://github.com/fernanda-vaz/previsao-do-tempo"
+      "title": "Next.js Dashboard",
+      "description": "Dashboard web desenvolvido com Next.js e TypeScript, com foco em organização de dados e navegação entre visões administrativas.",
+      "imageUrl": "/projects/nextjs-dashboard.png",
+      "category": "Dashboard",
+      "badge": [
+        "Next.js",
+        "TypeScript",
+        "React",
+        "Tailwind CSS"
+      ],
+      "href": "https://nextjs-dashboard-phi-drab-28.vercel.app",
+      "githuburl": "https://github.com/fernanda-vaz/nextjs-dashboard"
     },
     {
-      "title": "To do List",
-      "description": "Lista de tarfas com funcionalidade de editar e/ou excluir os ítens.",
-      "imageUrl": "https://raw.githubusercontent.com/fernanda-vaz/portfolio-assets/main/projects/project-to-do-list.png",
-      "category": "Product Design",
-      "badge": ["HTML", "CSS", "JavaScript"],
-      "href": "https://todo-list-two-psi-12.vercel.app",
-      "githuburl": "https://github.com/fernanda-vaz/todo-list"
+      "title": "Organo",
+      "description": "Aplicação web para organização visual de equipes e colaboradores, desenvolvida com React e TypeScript.",
+      "imageUrl": "/projects/organo-ts.png",
+      "category": "Web App",
+      "badge": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "href": "https://alura-organo-ts-ecru.vercel.app",
+      "githuburl": "https://github.com/fernanda-vaz/alura-organo-ts"
     }
   ],
-
   "skills": [
     {
       "name": "Docker",
@@ -208,7 +253,7 @@
       "enabled": true
     },
     {
-      "name": "Github",
+      "name": "GitHub",
       "enabled": true
     },
     {
@@ -228,7 +273,7 @@
       "enabled": true
     },
     {
-      "name": "Tailwind",
+      "name": "Tailwind CSS",
       "enabled": true
     },
     {
@@ -241,7 +286,8 @@
     },
     {
       "name": "HTML",
-      "enable": true
+      "enable": true,
+      "enabled": true
     },
     {
       "name": "Photoshop",
