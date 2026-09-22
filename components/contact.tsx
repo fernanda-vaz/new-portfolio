@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { SocialButton } from './ui/social-button'
 import { iconsMap, MailIcon } from './ui/icons'
 import { SocialHandle } from '@/lib/interface'
-import * as Yup from 'yup'
+import { contactValidationSchema, submitContactForm } from '@/lib/contact'
 import { FormInput, Textarea } from './ui/form-input'
 import { useState } from 'react'
 import { useFormik } from 'formik'
@@ -21,13 +21,7 @@ interface SocialProps {
   social: SocialHandle[]
 }
 
-const validationSchema = Yup.object({
-  name: Yup.string().required('Nome é obrigatório.'),
-  email: Yup.string()
-    .email('Por favor, informe um e-mail válido.')
-    .required('E-mail é obrigatório.'),
-  message: Yup.string().required('Mensagem é obrigatória.'),
-})
+const validationSchema = contactValidationSchema
 
 export function ContactSection({ social }: SocialProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -42,16 +36,8 @@ export function ContactSection({ social }: SocialProps) {
     onSubmit: async (values) => {
       setIsSubmitting(true)
       try {
-        const response = await fetch('https://submit-form.com/kLkLgWqF9', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify(values),
-        })
+        await submitContactForm(values)
 
-        if (response.ok) {
           toast.success('Mensagem enviada com sucesso!', {
             position: 'bottom-center',
             autoClose: 5000,
@@ -64,10 +50,7 @@ export function ContactSection({ social }: SocialProps) {
             transition: Bounce,
           })
           formik.resetForm()
-        } else {
-          throw new Error('Erro na resposta')
-        }
-      } catch (error) {
+      } catch {
         toast.error('Erro ao enviar a mensagem. Tente novamente.', {
           position: 'bottom-center',
           autoClose: 5000,
@@ -107,7 +90,7 @@ export function ContactSection({ social }: SocialProps) {
               </SectionHeading>
 
               {/* <Transition>
-                <p className='max-w-[600px] text-muted-foreground md:text-xl/relaxe '>
+                <p className='max-w-[600px] text-muted-foreground md:text-xl/relaxed '>
                   Estou disponível para novos projetos. Entre em contato para
                   discutirmos como posso ajudar a transformar suas ideias em
                   realidade.
@@ -132,12 +115,12 @@ export function ContactSection({ social }: SocialProps) {
                 </SlideIn>
               </div>
               <div className='flex space-x-4'>
-                {social.map((item, index) => {
+                {social.map((item) => {
                   const IconComponent =
                     iconsMap[item.icon as keyof typeof iconsMap]
 
                   return (
-                    <Transition key={index}>
+                    <Transition key={item.platform}>
                       <SocialButton
                         icon={<IconComponent className='h-5 w-5' />}
                         platform={item.platform}
@@ -151,14 +134,15 @@ export function ContactSection({ social }: SocialProps) {
           </div>
           <div className='space-y-4 mt-8'>
             <Transition>
-              <h2 className='max-w-[600px] text-muted-foreground md:text-xl/relaxe '>
+              <h2 className='max-w-[600px] text-muted-foreground md:text-xl/relaxed '>
                 Vamos conversar!
               </h2>
             </Transition>
             <SlideIn className='space-y-4 w-full'>
-              <form className='space-y-4' onSubmit={formik.handleSubmit}>
-                <div className='grid grid-cols-2 gap-4'>
+              <form className='space-y-4' onSubmit={formik.handleSubmit} noValidate>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                   <div>
+                    <label htmlFor='name' className='sr-only'>Seu nome</label>
                     <FormInput
                       id='name'
                       name='name'
@@ -167,27 +151,33 @@ export function ContactSection({ social }: SocialProps) {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className='w-full rounded-lg px-4 py-2 border border-secondary focus:border-primary focus:outline-none'
+                      aria-invalid={Boolean(formik.touched.name && formik.errors.name)}
+                      aria-describedby='name-error'
                     />
                     {formik.touched.name && formik.errors.name && (
-                      <p className='text-red-400 text-sm mt-1'>
+                      <p id='name-error' role='alert' className='text-red-400 text-sm mt-1'>
                         {formik.errors.name}
                       </p>
                     )}
                   </div>
 
                   <div>
+                    <label htmlFor='email' className='sr-only'>Seu e-mail</label>
                     <FormInput
                       id='email'
+                      name='email'
                       type='email'
                       placeholder='Seu email'
                       value={formik.values.email}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className='w-full rounded-lg px-4 py-2 border border-secondary focus:border-primary focus:outline-none'
+                      aria-invalid={Boolean(formik.touched.email && formik.errors.email)}
+                      aria-describedby='email-error'
                     />
 
                     {formik.touched.email && formik.errors.email && (
-                      <p className='text-red-400 text-sm mt-1'>
+                      <p id='email-error' role='alert' className='text-red-400 text-sm mt-1'>
                         {formik.errors.email}
                       </p>
                     )}
@@ -195,21 +185,28 @@ export function ContactSection({ social }: SocialProps) {
                 </div>
 
                 <div>
+                  <label htmlFor='message' className='sr-only'>Sua mensagem</label>
                   <Textarea
                     id='message'
+                    name='message'
                     placeholder='Sua mensagem'
                     value={formik.values.message}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className='w-full rounded-lg px-4 py-2 border border-secondary focus:border-primary focus:outline-none'
                     rows={4}
+                    aria-invalid={Boolean(formik.touched.message && formik.errors.message)}
+                    aria-describedby='message-error'
                   />
                   {formik.touched.message && formik.errors.message && (
-                    <p className='text-red-400 text-sm mt-1'>
+                    <p id='message-error' role='alert' className='text-red-400 text-sm mt-1'>
                       {formik.errors.message}
                     </p>
                   )}
                 </div>
+                <p className='text-xs text-muted-foreground'>
+                  Ao enviar, seus dados serão usados apenas para responder à sua mensagem.
+                </p>
                 <Button
                   variant='secondary'
                   className='w-full'
