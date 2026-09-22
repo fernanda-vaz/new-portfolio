@@ -7,7 +7,6 @@ import {
   MotionAnimatedText,
   SectionHeading,
   SlideIn,
-  Transition,
 } from './ui/transitions'
 
 interface SkillsProps {
@@ -46,11 +45,11 @@ export default function SkillsSection({ categories }: SkillsProps) {
           </div>
         </div>
         <div className='mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2'>
-          {categories.map((item, index) => {
+          {categories.map((item) => {
             const IconComponent = iconsMap[item.icon as keyof typeof iconsMap]
 
             return (
-              <SlideIn key={index}>
+              <SlideIn key={item.name}>
                 <SkillsCard
                   icon={<IconComponent className='h-6 w-6 text-primary' />}
                   title={item.name}

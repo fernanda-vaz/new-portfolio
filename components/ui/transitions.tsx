@@ -3,18 +3,15 @@
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import { HTMLMotionProps, motion } from 'motion/react'
-import SplitType from 'split-type'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-interface SectionHeadingProps extends HTMLMotionProps<'h3'> {}
+type SectionHeadingProps = HTMLMotionProps<'h2'>
 
 export const SectionHeading = ({
   className,
   ...props
 }: SectionHeadingProps) => {
   return (
-    <motion.h3
+    <motion.h2
       className={cn(
         'text-4xl md:text-6xl font-semibold font-sans md:px-4 px-2 pb-10 mx-auto',
         className
@@ -53,7 +50,7 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
               transition: { delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] },
             }}
             key={i}
-            className='inline-block whitespace-'
+            className='inline-block'
           >
             {char}
           </motion.span>
@@ -72,7 +69,7 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
               transition: { delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] },
             }}
             key={i}
-            className='inline-block whitespace-'
+            className='inline-block'
           >
             {char}
           </motion.span>
@@ -82,7 +79,7 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
   )
 }
 
-interface TransitionProps extends HTMLMotionProps<'div'> {}
+type TransitionProps = HTMLMotionProps<'div'>
 
 export const Transition = ({
   initial,
@@ -104,7 +101,7 @@ export const Transition = ({
   )
 }
 
-interface Props extends HTMLMotionProps<'span'> {}
+type Props = HTMLMotionProps<'span'>
 
 export const SlideIn = ({
   className,
@@ -172,7 +169,7 @@ export const MotionAnimatedText = ({ children }: { children: string }) => {
   }, [children])
 
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden flex flex-wrap gap-x-2'>
       {words.map((word, i) => (
         <motion.span
           key={i}
@@ -183,7 +180,7 @@ export const MotionAnimatedText = ({ children }: { children: string }) => {
             duration: 0.5,
             ease: 'easeOut',
           }}
-          className='inline-block mr-2'
+          className='inline-block whitespace-normal'
         >
           {word}
         </motion.span>

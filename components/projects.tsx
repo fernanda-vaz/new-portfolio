@@ -66,7 +66,7 @@ export function ProjectsSection({ projects }: ProjectProps) {
               <Transition
                 transition={{ delay: 0.2 + i * 0.1 }}
                 viewport={{ once: true }}
-                key={i}
+                key={proj.title}
                 layoutId={proj.title}
               >
                 <ProjectCard
@@ -82,7 +82,7 @@ export function ProjectsSection({ projects }: ProjectProps) {
             ))}
 
           {/* {projects.map((item, i) => (
-            <SlideIn key={i}>
+            <SlideIn key={item.title}>
               <ProjectCard
                 title={item.title}
                 description={item.description}

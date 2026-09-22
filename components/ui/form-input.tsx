@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+type InputProps = InputHTMLAttributes<HTMLInputElement>
 
 const FormInput = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
@@ -21,7 +21,7 @@ const FormInput = forwardRef<HTMLInputElement, InputProps>(
   }
 )
 
-interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {}
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {

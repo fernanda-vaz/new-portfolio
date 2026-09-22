@@ -4,7 +4,7 @@ import { motion, useAnimation, useMotionValue } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { iconsMap } from './ui/icons'
 import { Feature } from '@/lib/interface'
-import { SectionHeading, SlideIn, Transition } from './ui/transitions'
+import { SectionHeading, SlideIn } from './ui/transitions'
 
 interface FeatureProps {
   features: Feature[]
@@ -17,10 +17,16 @@ export default function FeatureCarousel({ features }: FeatureProps) {
   const controls = useAnimation()
 
   useEffect(() => {
-    if (carousel.current) {
-      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+    const updateWidth = () => {
+      if (carousel.current) {
+        setWidth(Math.max(0, carousel.current.scrollWidth - carousel.current.offsetWidth))
+      }
     }
-  }, [])
+    updateWidth()
+    const observer = new ResizeObserver(updateWidth)
+    if (carousel.current) observer.observe(carousel.current)
+    return () => observer.disconnect()
+  }, [features.length])
 
   const handleDragEnd = () => {
     const currentX = x.get()
@@ -40,7 +46,7 @@ export default function FeatureCarousel({ features }: FeatureProps) {
 
   return (
     <div className='py-20 bg-gradient-to-b from-background to-secondary/15 relative'>
-      <div className='maw-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <SectionHeading className='md:pl-16 overflow-hidden tracking-tighter text-start'>
           <SlideIn className='text-accent-foreground/50'>Como posso</SlideIn>
           <br />
@@ -50,7 +56,7 @@ export default function FeatureCarousel({ features }: FeatureProps) {
         </SectionHeading>
         <motion.div
           ref={carousel}
-          className='cursor-grab overflow-hidden'
+          className='cursor-grab overflow-x-auto overflow-y-hidden' role='region' aria-label='Serviços oferecidos'
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -64,12 +70,12 @@ export default function FeatureCarousel({ features }: FeatureProps) {
             onDragEnd={handleDragEnd}
             className='flex'
           >
-            {features.map((item, index) => {
+            {features.map((item) => {
               const IconComponent = iconsMap[item.icon as keyof typeof iconsMap]
 
               return (
                 <motion.div
-                  key={index}
+                  key={item.title}
                   className='min-w-[300px] h-[400px] p-8 m-4 bg-background rounded-3xl shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10'
                 >
                   <div>

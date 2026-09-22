@@ -7,7 +7,7 @@ import Link from 'next/link'
 const transition = {
   duration: 0.5,
   delay: 0.2,
-  ease: [0, 0.71, 0.2, 1.01],
+  ease: [0, 0.71, 0.2, 1.01] as const,
 }
 
 export default function CardLink() {
@@ -16,21 +16,21 @@ export default function CardLink() {
       title: 'GitHub',
       icon: <GitHub />,
       className:
-        'w-80 h-16 flex-shrink-0 rounded-xl bg-glass-gradient shadow-glass bg-blur-md flex justify-center',
+        'w-80 h-16 flex-shrink-0 rounded-xl bg-glass-gradient shadow-glass backdrop-blur-md flex justify-center',
       href: 'https://github.com/fernanda-vaz/',
     },
     {
       title: 'Vamos conversar!',
       icon: <WhatsApp />,
       className:
-        'w-80 h-16 flex-shrink-0 rounded-xl bg-glass-gradient shadow-glass bg-blur-md flex justify-center',
-      href: 'https://wa.link/ax1g3o',
+        'w-80 h-16 flex-shrink-0 rounded-xl bg-glass-gradient shadow-glass backdrop-blur-md flex justify-center',
+      href: 'https://wa.me/5561985888005',
     },
     {
       title: 'Buy me a coffee',
       icon: <Coffee />,
       className:
-        'w-80 h-16 flex-shrink-0 rounded-xl border border-black/50 bg-[#313131] text-[#f2f2f2] shadow-glass bg-blur-md flex justify-center',
+        'w-80 h-16 flex-shrink-0 rounded-xl border border-black/50 bg-[#313131] text-[#f2f2f2] shadow-glass backdrop-blur-md flex justify-center',
       href: 'https://buymeacoffee.com/fernandavaz',
     },
   ]

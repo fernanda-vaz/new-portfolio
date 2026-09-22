@@ -74,7 +74,7 @@ export function Header() {
 
         <div className='flex-1 justify-end hidden md:flex'>
           {mounted && (
-            <button
+            <button type='button' aria-label='Alternar tema' title='Alternar tema'
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className='rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200'
             >
@@ -88,14 +88,14 @@ export function Header() {
         </div>
 
         <div className='md:hidden'>
-          <Button variant='ghost' size='icon' onClick={toggleMenu}>
+          <Button variant='ghost' size='icon' type='button' aria-label='Abrir menu' aria-expanded={openMenu} aria-controls='mobile-menu' onClick={toggleMenu}>
             <MenuIcon className='h-5 w-5' />
           </Button>
         </div>
       </nav>
 
       <Drawer anchor='right' open={openMenu} onClose={closeMenu}>
-        <div className='w-64 p-6 flex flex-col gap-4 bg-background text-foreground h-full'>
+        <div id='mobile-menu' className='w-64 p-6 flex flex-col gap-4 bg-background text-foreground h-full'>
           <Link
             href='#about'
             className='text-base font-medium hover:text-secondary transition-all duration-300'
@@ -118,18 +118,13 @@ export function Header() {
             Projetos
           </Link>
 
-          <Button
-            variant='outline'
-            className='font-medium hover:bg-secondary/20 hover:text-foreground'
-          >
-            <Link href='#contact' className='font-medium' onClick={closeMenu}>
-              Contato
-            </Link>
-          </Button>
+          <Link href='#contact' className='inline-flex h-10 items-center justify-center rounded-md border border-input px-4 font-medium hover:bg-secondary/20 hover:text-foreground' onClick={closeMenu}>
+            Contato
+          </Link>
 
           <div className='flex-col flex-1 justify-end'>
             {mounted && (
-              <button
+              <button type='button' aria-label='Alternar tema' title='Alternar tema'
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className='rounded-full p-2 bg-secondary/10 text-secondary hover:bg-secondary/20 transition-colors duration-200'
               >

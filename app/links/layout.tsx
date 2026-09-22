@@ -1,7 +1,6 @@
 // app/links/layout.tsx
 import type { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
-import { Footer } from '@/components/footer'
 import { ThemeWrapper } from '@/components/theme-wrapper'
 import '@/app/links/links.css'
 
@@ -19,7 +18,6 @@ export default function LinksLayout({ children }: LinksLayoutProps) {
       >
         <ThemeWrapper>
           <main>{children}</main>
-          <Footer />
         </ThemeWrapper>
       </body>
     </html>

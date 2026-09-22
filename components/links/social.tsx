@@ -41,7 +41,7 @@ export default function Social() {
     {
       title: 'whatsapp',
       icon: <WhatsApp />,
-      href: 'https://wa.link/ax1g3o',
+      href: 'https://wa.me/5561985888005',
     },
   ]
 
@@ -70,7 +70,7 @@ export default function Social() {
               transition: { type: 'spring', stiffness: 400 },
             }}
           >
-            <Link href={icon.href} target='_blank'>
+            <Link href={icon.href} target='_blank' rel='noopener noreferrer'>
               {icon.icon}
             </Link>
           </motion.div>

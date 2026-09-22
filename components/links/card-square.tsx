@@ -7,7 +7,7 @@ import { motion } from 'motion/react'
 const transition = {
   duration: 0.5,
   delay: 0.2,
-  ease: [0, 0.71, 0.2, 1.01],
+  ease: [0, 0.71, 0.2, 1.01] as const,
 }
 
 export default function CardSquare() {
@@ -47,7 +47,7 @@ export default function CardSquare() {
                 <div className='py-4 px-2 font-semibold text-lg'>
                   <p>
                     {item.title.split('\n').map((line, i) => (
-                      <span>
+                      <span key={line}>
                         {line}
                         {i < item.title.split('\n').length - 1 && <br />}
                       </span>

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { ArrowRight, GithubIcon } from './icons'
 import { TextReveal } from './transitions'
 
@@ -27,10 +27,7 @@ export function ProjectCard({
   githuburl,
 }: ProjectCardProps) {
   return (
-    <>
-      <motion.div className=''>
-        <AnimatePresence>
-          <motion.div
+    <motion.div
             className='bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/50 h-[450px]'
             layout
             initial={{ opacity: 0 }}
@@ -42,22 +39,15 @@ export function ProjectCard({
               <Image
                 src={imageUrl}
                 alt={title}
-                layout='fill'
-                objectFit='cover'
-                className='transition-transform duration-300 ease-in-out group-hover:scale-105 z-0'
+                fill
+                sizes='(max-width: 768px) 100vw, 33vw'
+                className='object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 z-0'
               />
               <motion.div
                 className='absolute inset-0 bg-black/75 flex items-center justify-center z-10'
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-              >
-                <p className='text-white text-center px-4'>{description}</p>
-              </motion.div>
-              //
-              <motion.div
-                className='absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300'
-                whileHover={{ opacity: 1 }}
               >
                 <p className='text-white text-center px-4'>{description}</p>
               </motion.div>
@@ -73,8 +63,8 @@ export function ProjectCard({
               </h3>
 
               <div className='flex flex-wrap gap-2 mb-4'>
-                {badge.map((item, i) => (
-                  <Badge key={i} variant='secondary'>
+                {badge.map((item) => (
+                  <Badge key={item} variant='secondary'>
                     {item}
                   </Badge>
                 ))}
@@ -92,6 +82,7 @@ export function ProjectCard({
                 </Link>
 
                 <Link
+                  aria-label='Abrir código do projeto no GitHub'
                   href={githuburl}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -101,9 +92,6 @@ export function ProjectCard({
                 </Link>
               </div>
             </div>
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
-    </>
+    </motion.div>
   )
 }

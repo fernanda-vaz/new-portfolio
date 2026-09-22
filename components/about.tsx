@@ -47,8 +47,8 @@ export function AboutSection({ about, services }: AboutProps) {
             </Transition>
             <div className='flex flex-col justify-center space-y-4'>
               <ul className='grid gap-6'>
-                {services.map((item, index) => (
-                  <SlideIn key={index}>
+                {services.map((item) => (
+                  <SlideIn key={item.title}>
                     <li>
                       <div className='grid gap-1'>
                         <h3 className='text-xl font-bold'>{item.title}</h3>
