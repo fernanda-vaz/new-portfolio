@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,12 +13,12 @@ export const metadata = {
     template: '%s | Fernanda Vaz',
   },
   description:
-    'Desenvolvedora web front-end criando interfaces modernas com React, Next.js e animações com Motion e GSAP.',
+    'Desenvolvedora Front-end Júnior na SEA Tecnologia, criando interfaces acessíveis e de alto desempenho com React, Next.js e TypeScript.',
   metadataBase: new URL('https://fevaz.com.br'),
   openGraph: {
     title: 'Portfólio | Fernanda Vaz',
     description:
-      'Projetos, habilidades e experiências em desenvolvimento front-end com foco em performance e design.',
+      'Projetos, habilidades e experiência em desenvolvimento front-end para sistemas web acessíveis e de alto desempenho.',
     url: 'https://fevaz.com.br',
     siteName: 'Fernanda Vaz | Desenvolvedora Web',
     locale: 'pt_BR',
@@ -42,7 +41,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Portfólio | Fernanda Vaz',
     description:
-      'Conheça os projetos e habilidades de Fernanda Vaz, desenvolvedora web focada em experiências incríveis com React e Next.js.',
+      'Conheça os projetos e a experiência de Fernanda Vaz, Desenvolvedora Front-end Júnior com React, Next.js e TypeScript.',
     creator: '@fevaz',
     images: ['https://fevaz.com.br/og-image.png'],
   },
@@ -66,10 +65,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR' suppressHydrationWarning>
-      <Head>
-        <link rel='icon' href='/favicon.ico' />
-        <link rel='apple-touch-icon' href='/favicon.ico' />
-      </Head>
       <body
         className={`${inter.className} min-h-screen bg-background text-foreground`}
       >
